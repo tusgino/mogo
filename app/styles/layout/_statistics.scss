@@ -1,0 +1,57 @@
+.statistics {
+  background-color: $tertiary-color;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  &-item {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    border-left: 1px solid #b5eae0;
+    border-right: 1px solid #b5eae0;
+    opacity: 0.7;
+    transition: all 0.2s linear;
+    &-number {
+      font-size: 7.2rem;
+      font-weight: bold;
+      padding-bottom: 3rem;
+    }
+    &-title {
+      text-transform: uppercase;
+      text-align: center;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  @include maxWidth(1023px) {
+    &-item {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      &-number {
+        font-size: 6rem;
+        padding-bottom: 1.5rem;
+      }
+      &-title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      grid-template-columns: unset;
+      grid-auto-columns: 50%;
+      grid-auto-flow: column;
+      @include scollX();
+    }
+    &-item {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+  }
+}

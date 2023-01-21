@@ -1,0 +1,102 @@
+.servicesbottom {
+  margin-top: 3rem;
+  margin-bottom: 12rem;
+  // &-container {
+  //   // @include flexbox(stretch, space-between);
+  //   // & > * {
+  //   //   width: calc(50% - 1.5rem);
+  //   // }
+  // }
+  // &-image,
+  // &-content {
+  //   width: calc(50% - 1.5rem);
+  // }
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &-header {
+      @include flexbox(center);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid $gray-dark-color;
+      cursor: pointer;
+    }
+    &-icon {
+      margin-right: 1.5rem;
+    }
+    &-title {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    &-arrow {
+      font-size: 3rem;
+      color: $gray-dark-color;
+      margin-left: auto;
+    }
+    &-text {
+      padding: 2rem;
+      border-left: 1px solid $gray-dark-color;
+      border-right: 1px solid $gray-dark-color;
+      border-bottom: 1px solid $gray-dark-color;
+      display: none;
+    }
+    &-content {
+      font-family: $secondary-font;
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 100;
+      color: $text-color;
+      line-height: 1.6;
+      height: 15rem;
+      overflow-y: auto;
+      padding-right: 2rem;
+    }
+    &-content::-webkit-scrollbar {
+      padding-left: 2.5rem;
+      width: 0.5rem;
+    }
+
+    &-content::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px $gray-light-color;
+      border-radius: 4px;
+    }
+
+    &-content::-webkit-scrollbar-thumb {
+      background-color: $tertiary-color;
+      border-radius: 4px;
+    }
+  }
+  &-item.is-active .servicesbottom-item-text {
+    display: block;
+  }
+
+  @include minWidth(768px) {
+    // &-container {
+    //   @include flexbox(stretch, space-between);
+    // }
+    // &-image,
+    // &-content {
+    //   width: calc(50% - 1.5rem);
+    // }
+
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 3rem;
+    }
+    &-image {
+      width: 100%;
+    }
+  }
+
+  @include maxWidth(767px) {
+    margin-top: 0;
+    &-container {
+      // flex-direction: column;
+    }
+    &-image,
+    &-content {
+      width: 100%;
+    }
+  }
+}

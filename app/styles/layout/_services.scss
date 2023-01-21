@@ -1,0 +1,56 @@
+.services {
+  margin-top: 11rem;
+  margin-bottom: 12rem;
+  background: #fff;
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 2.5rem;
+  }
+  &-item {
+    @include flexbox();
+    &-icon {
+      color: $tertiary-color;
+      font-size: 3rem;
+    }
+    &-content {
+      padding-left: 3rem;
+    }
+    &-title {
+      display: inline-block;
+      font-weight: 500;
+      color: #000;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    &-desc {
+      font-size: 1.5rem;
+      color: $desc-color;
+      line-height: 1.4;
+      font-family: $secondary-font;
+    }
+    @include minWidth(768px) {
+      &:nth-child(-n + 3) {
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid $gray-dark-color;
+      }
+    }
+  }
+  @include maxWidth(767px) {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    &-list {
+      display: block;
+    }
+    &-item {
+      margin-bottom: 3rem;
+      &-icon {
+        font-size: 5rem;
+      }
+      &-title {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

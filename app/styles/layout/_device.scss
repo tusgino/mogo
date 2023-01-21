@@ -1,0 +1,23 @@
+.device {
+  padding-top: 9rem;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    @include absoluteFull();
+    @include size(100%, 90%);
+    z-index: -1;
+    background: url('https://img.upanh.tv/2022/09/04/img-device-bg.png') no-repeat center / cover;
+    opacity: 0.2;
+  }
+  &-image {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-0.2rem);
+  }
+  @include maxWidth(524px) {
+    &-image {
+      transform: translateY(-0.7rem);
+    }
+  }
+}
